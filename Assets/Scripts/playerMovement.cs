@@ -7,8 +7,6 @@ public class playerMovement : MonoBehaviour
 
     private Rigidbody rb;
 
-    public bool canJump = true;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -49,11 +47,11 @@ public class playerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            if (canJump == true)
-            {
-                rb.AddForce(new Vector3(0, 250, 0));
-                canJump = false;
-            }
+            transform.Translate(new Vector3(0, 7, 0) * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            transform.Translate(new Vector3(0, -3.5f, 0) * Time.deltaTime);
         }
 
     }
@@ -63,7 +61,6 @@ public class playerMovement : MonoBehaviour
         if (collision.gameObject.name == "Floor")
         {
             Debug.Log("I have hit the floor!");
-            canJump = true;
         }
     }
 }
