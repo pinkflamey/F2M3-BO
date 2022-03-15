@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class playerMovement : MonoBehaviour
@@ -23,7 +24,7 @@ public class playerMovement : MonoBehaviour
         {
             transform.Translate(new Vector3(0, 0, 5) * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(new Vector3(2, 0, 0) * Time.deltaTime);
         }
@@ -31,18 +32,18 @@ public class playerMovement : MonoBehaviour
         {
             transform.Translate(new Vector3(0, 0, -2) * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(new Vector3(-2, 0, 0) * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.E))
         {
-            transform.Rotate(0f, 2f, 0f, Space.Self);
+            transform.Rotate(0f, 0.5f, 0f, Space.Self);
         }
         if (Input.GetKey(KeyCode.Q))
         {
-            transform.Rotate(0f, -2f, 0f, Space.Self);
+            transform.Rotate(0f, -0.5f, 0f, Space.Self);
         }
 
         if (Input.GetKey(KeyCode.Space))
@@ -64,3 +65,4 @@ public class playerMovement : MonoBehaviour
         }
     }
 }
+
