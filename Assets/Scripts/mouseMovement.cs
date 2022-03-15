@@ -8,10 +8,13 @@ public class mouseMovement : MonoBehaviour
 
     float mainSpeed = 25.0f; //regular speed
     float shiftAdd = 250.0f; //multiplied by how long shift is held.  Basically running
-    float maxShift = 100.0f; //Maximum speed when holding shift
-    float camSens = 0.25f; //How sensitive it with mouse
+    float maxShift = 50.0f; //Maximum speed when holding shift
+    float camSens = 2.0f; //How sensitive it with mouse
     private Vector3 lastMouse = new Vector3(255, 255, 255); //kind of in the middle of the screen, rather than at the top (play)
     private float totalRun = 1.0f;
+    public int Boundary = 50;
+    public int speed = 5;
+
 
     private void Start()
     {
@@ -20,7 +23,7 @@ public class mouseMovement : MonoBehaviour
     }
     void Update()
     {
-        lastMouse = Input.mousePosition - lastMouse;
+        lastMouse = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
         lastMouse = new Vector3(-lastMouse.y * camSens, lastMouse.x * camSens, 0);
         lastMouse = new Vector3(transform.eulerAngles.x + lastMouse.x, transform.eulerAngles.y + lastMouse.y, 0);
         transform.eulerAngles = lastMouse;
@@ -60,6 +63,7 @@ public class mouseMovement : MonoBehaviour
                 transform.Translate(p);
             }
         }
+
     }
 
     private Vector3 GetBaseInput()
