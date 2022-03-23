@@ -30,5 +30,13 @@ public class playerMovement : MonoBehaviour
         {
             transform.Translate(new Vector3(10, 0, 0) * Time.deltaTime);
         }
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            transform.Translate(new Vector3(0, 15, 0) * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            transform.Translate(new Vector3(0, -5, 0) * Time.deltaTime);
+        }
     }
 }
