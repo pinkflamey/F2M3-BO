@@ -408,15 +408,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e1a4bed2b2f0764ba5cbaa8cd40934b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedH: 2
-  speedV: 2
-  yaw: 0
-  pitch: 0
-  player: {fileID: 1926818287}
-  mainCameraTransform: {fileID: 0}
-  cameraOffset: {x: 0, y: 0, z: 0}
-  turnSpeed: 3
-  cameraParent: {fileID: 0}
 --- !u!1001 &1683875667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -587,7 +578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab006976c0d47dc4b8c30c4c42ba1095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 1926818289}
 --- !u!54 &1926818289
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -602,7 +593,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!135 &1926818290
 SphereCollider:
