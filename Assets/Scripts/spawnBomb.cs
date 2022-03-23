@@ -18,7 +18,7 @@ public class spawnBomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spawnPosition = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
+        spawnPosition = new Vector3(transform.position.x, transform.position.y - 1.5f, transform.position.z);
 
         if (Input.GetButtonDown("Space") && canSpawnBomb)
         {
