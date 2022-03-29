@@ -18,7 +18,7 @@ public class spawnBomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spawnPosition = new Vector3(transform.position.x, transform.position.y - 1.5f, transform.position.z);
+        spawnPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && canSpawnBomb)
         {
@@ -30,7 +30,7 @@ public class spawnBomb : MonoBehaviour
 
     private IEnumerator bombSpawnTimer()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         canSpawnBomb = true;
     }
 }
