@@ -20,7 +20,7 @@ public class spawnBomb : MonoBehaviour
     {
         spawnPosition = new Vector3(transform.position.x, transform.position.y - 1.5f, transform.position.z);
 
-        if (Input.GetButtonDown("Space") && canSpawnBomb)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && canSpawnBomb)
         {
             Instantiate(bombPrefab, spawnPosition, Quaternion.identity);
             canSpawnBomb = false;
