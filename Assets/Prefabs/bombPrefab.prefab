@@ -82,6 +82,7 @@ MonoBehaviour:
   radius: 75
   explosionPower: 750
   upwardsMod: 5
+  angularDrag: 5
   colliders: []
 --- !u!1 &3635013475769434620
 GameObject:
