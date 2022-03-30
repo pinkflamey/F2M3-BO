@@ -14,27 +14,19 @@ public class playerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(new Vector3(0, 0, 10) * Time.deltaTime);
-        }
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(new Vector3(-10, 0, 0) * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(new Vector3(0, 0, -10) * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(new Vector3(10, 0, 0) * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Space))
         {
             transform.Translate(new Vector3(0, 15, 0) * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             transform.Translate(new Vector3(0, -5, 0) * Time.deltaTime);
         }
