@@ -46,14 +46,24 @@ public class bombExplode : MonoBehaviour
                     {
                         foreach (Transform child in collider.transform)
                         {
+
                             GameObject childObject = child.gameObject;
 
-                            childObject.AddComponent<Rigidbody>();
-                            Rigidbody crb = childObject.GetComponent<Rigidbody>();
+                            if(childObject.GetComponent<Rigidbody>() == null)
+                            {
+                                childObject.AddComponent<Rigidbody>();
+                            }
+
+                            Rigidbody crb = child.GetComponent<Rigidbody>();
 
                             crb.angularDrag = angularDrag;
 
-                            childObject.AddComponent(typeof(SphereCollider));
+                            if(childObject.GetComponent<SphereCollider>() == null)
+                            {
+                                childObject.AddComponent(typeof(SphereCollider));
+                            }
+                            
+
                         }
                     }
                     else
