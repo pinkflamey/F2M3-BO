@@ -30,5 +30,10 @@ public class playerMovement : MonoBehaviour
         {
             transform.Translate(new Vector3(0, -5, 0) * Time.deltaTime);
         }
+
+        if(transform.position.y < 6)
+        {
+            transform.position = new Vector3(transform.position.x, 6, transform.position.z);
+        }
     }
 }
