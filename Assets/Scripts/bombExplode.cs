@@ -9,6 +9,7 @@ public class bombExplode : MonoBehaviour
     public float radius = 10f;
     public float explosionPower = 5f;
     public float upwardsMod = 3f;
+    public float angularDrag = 5f;
     public Collider[] colliders;
 
     // Start is called before the first frame update
@@ -33,14 +34,35 @@ public class bombExplode : MonoBehaviour
     {
         foreach (Collider collider in colliderList)
         {
-            Debug.Log(collider.name);
+
+            
+
             if (collider.GetComponent<Rigidbody>() != null)
             {
                 if (collider.name != "Bomb" && collider.name != "UFO")
                 {
-                    Rigidbody rb = collider.GetComponent<Rigidbody>();
 
-                    rb.AddExplosionForce(explosionPower, transform.position, radius, upwardsMod);
+                    if (collider.transform.childCount > 0)
+                    {
+                        foreach (Transform child in collider.transform)
+                        {
+                            GameObject childObject = child.gameObject;
+
+                            childObject.AddComponent<Rigidbody>();
+                            Rigidbody crb = childObject.GetComponent<Rigidbody>();
+
+                            crb.angularDrag = angularDrag;
+
+                            childObject.AddComponent(typeof(SphereCollider));
+                        }
+                    }
+                    else
+                    {
+                        Rigidbody rb = collider.GetComponent<Rigidbody>();
+
+                        rb.AddExplosionForce(explosionPower, transform.position, radius, upwardsMod);
+                    }
+                        
                 }
             }
         }
