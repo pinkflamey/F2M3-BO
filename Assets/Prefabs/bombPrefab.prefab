@@ -79,6 +79,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 1891107428929319220, guid: 8cf352a575eb182429ab884b91d4b505, type: 3}
+  radius: 75
+  explosionPower: 750
+  upwardsMod: 5
+  colliders: []
 --- !u!1 &3635013475769434620
 GameObject:
   m_ObjectHideFlags: 0

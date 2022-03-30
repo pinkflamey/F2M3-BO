@@ -8,6 +8,7 @@ public class spawnBomb : MonoBehaviour
     public GameObject bombPrefab;
     public Vector3 spawnPosition;
     public bool canSpawnBomb;
+    public float bombSpawnDelay = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,7 @@ public class spawnBomb : MonoBehaviour
 
     private IEnumerator bombSpawnTimer()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(bombSpawnDelay);
         canSpawnBomb = true;
     }
 }
