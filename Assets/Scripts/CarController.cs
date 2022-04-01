@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    public bool mayDrive = false;
+    public bool mayDrive = true;
     public float speedX = 1f;
+    public bool controlledDebug = false;
 
     public Rigidbody rb;
 
@@ -18,15 +19,18 @@ public class CarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (controlledDebug)
         {
-            if (mayDrive == true)
+            if (Input.GetKeyDown(KeyCode.F12))
             {
-                mayDrive = false;
-            }
-            else if (mayDrive == false)
-            {
-                mayDrive = true;
+                if (mayDrive == true)
+                {
+                    mayDrive = false;
+                }
+                else if (mayDrive == false)
+                {
+                    mayDrive = true;
+                }
             }
         }
 
@@ -35,6 +39,16 @@ public class CarController : MonoBehaviour
 
             transform.Translate(new Vector3(speedX, 0, 0) * Time.deltaTime);
 
+        }
+
+        //Check if exploded or not
+        if (gameObject.tag == "isDead")
+        {
+            mayDrive = false;
+        }
+        else
+        {
+            mayDrive = true;
         }
     }
 
