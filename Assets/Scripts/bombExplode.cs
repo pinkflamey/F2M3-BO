@@ -41,6 +41,7 @@ public class bombExplode : MonoBehaviour
             {
                 if (collider.name != "Bomb" && collider.name != "UFO")
                 {
+                    collider.gameObject.tag = "isDead";
 
                     if (collider.transform.childCount > 0)
                     {
