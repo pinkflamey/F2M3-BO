@@ -10,7 +10,8 @@ public class bombExplode : MonoBehaviour
     public float explosionPower = 5f;
     public float upwardsMod = 3f;
     public float angularDrag = 5f;
-    public Collider[] colliders;
+    internal Collider[] colliders;
+    public float explosionDelay = 2.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,7 @@ public class bombExplode : MonoBehaviour
 
             if (collider.GetComponent<Rigidbody>() != null)
             {
-                if (collider.name != "Bomb" && collider.name != "UFO")
+                if (collider.name != "bombPrefab" && collider.name != "UFO" && collider.name != "rocketPrefab")
                 {
                     collider.gameObject.tag = "isDead";
 
@@ -79,9 +80,9 @@ public class bombExplode : MonoBehaviour
         }
     }
 
-    IEnumerator Explode()
+    internal IEnumerator Explode()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(explosionDelay);
 
         Explosion(GetColliders());
 
