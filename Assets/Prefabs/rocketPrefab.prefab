@@ -412,7 +412,7 @@ MonoBehaviour:
   angularDrag: 5
   explosionDelay: 0
   target: {x: 0, y: 0, z: 0}
-  speed: 15
+  speed: 10
 --- !u!1 &5328785894906984044
 GameObject:
   m_ObjectHideFlags: 0
