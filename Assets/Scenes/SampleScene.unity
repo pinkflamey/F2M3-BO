@@ -2095,6 +2095,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rocketPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 5328785894683791212, guid: baa9f00e5d3c18d4ab73045865901031, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5328785894683791213, guid: baa9f00e5d3c18d4ab73045865901031, type: 3}
       propertyPath: m_RootOrder
       value: 1
