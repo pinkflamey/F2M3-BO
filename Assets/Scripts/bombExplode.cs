@@ -5,6 +5,7 @@ using UnityEngine;
 public class bombExplode : MonoBehaviour
 {
     public GameObject explosionPrefab;
+    public AudioSource explosionSoundPrefab;
 
     public float radius = 10f;
     public float explosionPower = 5f;
@@ -87,7 +88,9 @@ public class bombExplode : MonoBehaviour
         Explosion(GetColliders());
 
         Destroy(gameObject);
+        AudioSource explosionSound = Instantiate(explosionSoundPrefab, transform.position, Quaternion.identity);
         GameObject particle = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        
         Destroy(particle, 1.5f);
     }
 
