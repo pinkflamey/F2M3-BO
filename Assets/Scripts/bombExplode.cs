@@ -5,12 +5,14 @@ using UnityEngine;
 public class bombExplode : MonoBehaviour
 {
     public GameObject explosionPrefab;
+    public AudioSource explosionSoundPrefab;
 
     public float radius = 10f;
     public float explosionPower = 5f;
     public float upwardsMod = 3f;
     public float angularDrag = 5f;
-    public Collider[] colliders;
+    internal Collider[] colliders;
+    public float explosionDelay = 2.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -39,8 +41,9 @@ public class bombExplode : MonoBehaviour
 
             if (collider.GetComponent<Rigidbody>() != null)
             {
-                if (collider.name != "Bomb" && collider.name != "UFO")
+                if (collider.name != "bombPrefab" && collider.name != "UFO" && collider.name != "rocketPrefab")
                 {
+                    collider.gameObject.tag = "isDead";
 
                     if (collider.transform.childCount > 0)
                     {
@@ -78,14 +81,16 @@ public class bombExplode : MonoBehaviour
         }
     }
 
-    IEnumerator Explode()
+    internal IEnumerator Explode()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(explosionDelay);
 
         Explosion(GetColliders());
 
         Destroy(gameObject);
+        AudioSource explosionSound = Instantiate(explosionSoundPrefab, transform.position, Quaternion.identity);
         GameObject particle = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        
         Destroy(particle, 1.5f);
     }
 
