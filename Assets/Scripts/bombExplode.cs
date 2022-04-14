@@ -92,6 +92,8 @@ public class bombExplode : MonoBehaviour
         GameObject particle = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         
         Destroy(particle, 1.5f);
+        yield return new WaitForSeconds(1.5f);
+        Destroy(explosionSound);
     }
 
     
