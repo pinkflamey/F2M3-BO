@@ -2901,7 +2901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56cdc6bbdc32a804fb52b036320a8e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombPrefab: {fileID: 5328785894683791209, guid: baa9f00e5d3c18d4ab73045865901031, type: 3}
+  bombPrefab: {fileID: 8902535423910595540, guid: de76f880a29cd48499279033d1de4896, type: 3}
   spawnPosition: {x: 0, y: 0, z: 0}
   canSpawnBomb: 0
   bombSpawnDelay: 2
