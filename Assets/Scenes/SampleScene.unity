@@ -950,6 +950,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: carPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7338878253689775686, guid: 176111ed54d347e4f8d8bdee8d2cbd38, type: 3}
+      propertyPath: speedX
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 176111ed54d347e4f8d8bdee8d2cbd38, type: 3}
 --- !u!1001 &1314435379
@@ -969,7 +973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7577580101129044067, guid: 37f8f99ac3295264b80dceb98be02f54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.018683
+      value: -6.9
       objectReference: {fileID: 0}
     - target: {fileID: 7577580101129044067, guid: 37f8f99ac3295264b80dceb98be02f54, type: 3}
       propertyPath: m_LocalPosition.y
