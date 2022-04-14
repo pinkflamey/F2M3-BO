@@ -65,7 +65,8 @@ public class bombExplode : MonoBehaviour
                             {
                                 childObject.AddComponent(typeof(SphereCollider));
                             }
-                            
+
+                            Destroy(child.gameObject, 5f);
 
                         }
                     }
