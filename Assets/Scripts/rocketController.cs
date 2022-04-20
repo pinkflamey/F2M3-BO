@@ -23,7 +23,6 @@ public class rocketController : bombExplode
     {
         target = FindClosestEnemy();
         Vector3 direction = target - transform.position;
-        Debug.Log(direction);
 
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
         transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
