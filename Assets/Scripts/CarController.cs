@@ -52,14 +52,5 @@ public class CarController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log(collision.gameObject.name);
-        if(collision.gameObject.name != "Floor")
-        {
-            transform.Rotate(new Vector3(0, 180, 0));
-        }
-    }
-
 
 }
