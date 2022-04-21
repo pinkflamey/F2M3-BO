@@ -50048,6 +50048,7 @@ MonoBehaviour:
   car: {fileID: 4288269563962101870, guid: 176111ed54d347e4f8d8bdee8d2cbd38, type: 3}
   carSpawner1: {fileID: 1776751366}
   carSpawner2: {fileID: 2133565548}
+  parent: {fileID: 205184036}
   spawnTime: 6
   position1: {x: 0, y: 0, z: 0}
   position2: {x: 0, y: 0, z: 0}

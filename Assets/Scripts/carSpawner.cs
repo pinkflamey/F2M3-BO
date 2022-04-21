@@ -7,6 +7,7 @@ public class carSpawner : MonoBehaviour
     public GameObject car;
     public GameObject carSpawner1;
     public GameObject carSpawner2;
+    public Transform parent;
     public float spawnTime = 6f;
     public Vector3 position1;
     public Vector3 position2;
@@ -29,7 +30,9 @@ public class carSpawner : MonoBehaviour
         var newCar = GameObject.Instantiate(car);
         newCar.transform.position = position1;
         newCar.transform.Rotate(0, 180, 0);
+        newCar.transform.SetParent(parent);
         var newCar2 = GameObject.Instantiate(car);
         newCar2.transform.position = position2;
+        newCar2.transform.SetParent(parent);
     }
 }
